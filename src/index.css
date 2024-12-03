@@ -1,0 +1,83 @@
+h1 {
+  font-size: 14px !important;
+}
+
+h2 {
+  font-size: 12px !important;
+}
+
+h3 {
+  font-size: 11px !important;
+}
+
+h4 {
+  font-size: 10px !important;
+}
+
+h5 {
+  font-size: 9px !important;
+}
+
+h6 {
+  font-size: 8px !important;
+}
+
+p {
+  font-size: 7px !important;
+}
+
+.map-container {
+  position: relative;
+}
+
+.r-map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.drawing-manager {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.drawing-manager-icon {
+  background-color: #fff;
+  border: none;
+  padding: 5px;
+  margin: 1px;
+  border-radius: 50%;
+}
+
+.navigation-param {
+  position: absolute;
+  top: 5px;
+  left: 10%;
+  right: 10%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  padding-top: 10px;
+}
+
+.overlay {
+  /* position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1; */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+}
