@@ -37,6 +37,12 @@ import PolygonForm from "./polygon/PolygonForm";
 import LineForm from "./line/LineForm";
 import ParrallelForm from "./rectangle/ParrallelForm";
 import ParallelTrackDrawer from "./rectangle/ParallelTrackDrawer";
+import ExpandingDrawer from "./expaning/ExpaningDrawer";
+import ExpaningForm from "./expaning/ExpaningForm";
+import ExpandingForm from "./expanding/ExpandingForm";
+// import {
+//   Coordinate,
+//   GeoJson
 
 const format = new MVT();
 
@@ -61,6 +67,9 @@ const MapContainer: React.FC = () => {
 
   const [features, setFeatures] = useState<any>(undefined);
   const [parrallelShapes, setParrallelShapes] = useState<any[]>([]);
+
+
+  
 
   const [data, setData] = useState<Data>({
     location: { lat: 0, lng: 0 },
@@ -206,14 +215,17 @@ const MapContainer: React.FC = () => {
   const [showParallelForm, setShowParallelForm] = useState<boolean>(false);
   const onHide = () => setShowParallelForm(false);
 
+  const [showExpandingForm, setShowExpandingForm] =useState<boolean>(false);
+  const Hide = () => setShowExpandingForm(false)
+
   return (
     <div className="map-container">
       <RMap
         initial={{ center: fromLonLat(center), zoom }}
         className="r-map"
         onPointerMove={onPointerMove}
-        onClick={onMapClick}
-      >
+        onClick={onMapClick} 
+        >
         <div className="drawing-manager">
           <button
             onClick={() => onClick("LineString")}
@@ -238,6 +250,8 @@ const MapContainer: React.FC = () => {
           >
             <i className="bi bi-pentagon" />
           </button>
+          
+
 
           <button
             onClick={() => {
@@ -258,6 +272,16 @@ const MapContainer: React.FC = () => {
           >
             <i className="bi bi-binoculars" />
           </button>
+          <button
+            onClick={() => {
+              setShowExpandingForm(true);
+            }}
+            className="drawing-manager-icon"
+            aria-label="Expanding Shape"
+          >
+            <i className="bi bi-chevron-expand" />
+          </button>
+
         </div>
 
         <div className="navigation-param">
@@ -335,6 +359,7 @@ const MapContainer: React.FC = () => {
       {/* {type === "Parrallel" && <ParrallelFrom />} */}
 
       <ParrallelForm show={showParallelForm} onHide={onHide} />
+      <ExpandingForm show={showExpandingForm} onHide={Hide} />
     </div>
   );
 };

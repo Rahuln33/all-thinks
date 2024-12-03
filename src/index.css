@@ -81,3 +81,15 @@ p {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   min-width: 100px;
 }
+
+
+.form-check{
+  gap:10px
+}
+
+.button{
+  margin-left: 60%;
+  position:static;
+  top:50px;
+  
+}
